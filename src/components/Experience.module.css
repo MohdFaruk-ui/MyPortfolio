@@ -1,0 +1,120 @@
+.experience {}
+
+.timeline {
+  position: relative;
+  max-width: 700px;
+}
+
+/* ── Vertical line ── */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-border) 60%, transparent 100%);
+}
+
+/* ── Timeline item ── */
+.timelineItem {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot */
+.timelineDot {
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+}
+
+.timelineDotMuted {
+  background: var(--color-text-muted);
+  box-shadow: none;
+}
+
+/* Content */
+.timelineDate {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  margin-bottom: var(--sp-xs);
+  letter-spacing: 0.5px;
+}
+
+.timelineDateMuted {
+  color: var(--color-text-muted);
+}
+
+.timelineTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  color: var(--color-text);
+}
+
+.timelineCompany {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-md);
+}
+
+.timelinePoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timelinePoint {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.timelinePoint::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+}
+
+/* ── Tags ── */
+.timelineTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--sp-md);
+}
+
+.timelineTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+  border: 1px solid rgba(245, 166, 35, 0.15);
+}
+
+@media (max-width: 640px) {
+  .timelineItem {
+    padding-left: 2rem;
+    padding-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,153 @@
+.contact {
+  background: var(--color-bg-secondary);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* ── Left: Info ── */
+.contactInfo {}
+
+.contactText {
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--sp-2xl);
+}
+
+.contactText strong {
+  color: var(--color-text);
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  padding: var(--sp-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all var(--duration-base) var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contactMethod:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-glow);
+}
+
+.methodIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.methodLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.methodValue {
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  margin-top: 2px;
+}
+
+/* ── Right: Form ── */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.formLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formInput {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  transition: all var(--duration-base) var(--ease-out);
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+}
+
+.formInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.formSubmit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  background: var(--gradient-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--fs-md);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-out);
+  border: none;
+  align-self: flex-start;
+}
+
+.formSubmit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px var(--color-accent-glow);
+}
+
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
