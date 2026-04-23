@@ -10,10 +10,9 @@ const fadeUp = {
 };
 
 const STATS = [
-  { value: '10+', label: 'Projects Built' },
+  { value: '4+', label: 'Projects Built' },
   { value: '3+', label: 'Years Coding' },
   { value: '6+', label: 'Technologies' },
-  { value: '100%', label: 'Passion Driven' },
 ];
 
 export default function About() {

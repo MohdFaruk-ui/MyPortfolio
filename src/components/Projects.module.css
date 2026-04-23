@@ -62,6 +62,27 @@
   justify-content: center;
 }
 
+.thumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.cardThumb:hover .thumbOverlay {
+  opacity: 1;
+}
+
 .thumbEmoji {
   font-size: 3.5rem;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
@@ -164,6 +185,122 @@
 
 .cardLink:hover {
   color: var(--color-accent);
+}
+
+/* ── Modal ── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: background 0.2s;
+}
+
+.modalClose:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.modalContent {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalImageContainer {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 80px); /* Leave space for thumbnails */
+}
+
+.modalImage {
+  object-fit: contain; /* ensures full image is visible */
+}
+
+.modalNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s;
+}
+
+.modalNav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.modalNavLeft { left: 1rem; }
+.modalNavRight { right: 1rem; }
+
+.modalThumbnails {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.modalThumbBtn {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s;
+  background: transparent;
+  padding: 0;
+}
+
+.modalThumbActive {
+  border-color: var(--color-accent);
+  opacity: 1;
+}
+
+.modalThumbBtn:hover {
+  opacity: 1;
+}
+
+.modalThumbImage {
+  object-fit: cover;
 }
 
 @media (max-width: 640px) {

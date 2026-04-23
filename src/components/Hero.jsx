@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { FiGithub, FiLinkedin, FiArrowDown } from 'react-icons/fi';
 import styles from './Hero.module.css';
 
@@ -83,13 +82,28 @@ export default function Hero() {
             <div className={styles.avatarGlow} />
             <div className={styles.avatarRing} />
             <div className={styles.avatarInner}>
-              <Image 
-                src="/mf-logo.png" 
-                alt="Mohd Faruk Logo" 
-                fill 
-                style={{ objectFit: 'cover' }} 
-                priority
-              />
+              <motion.svg
+                viewBox="0 0 100 100"
+                fill="none"
+                stroke="var(--color-accent)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={styles.monogramSvg}
+              >
+                <motion.path 
+                  d="M 15 75 L 15 25 L 35 50 L 55 25 L 55 75" 
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
+                />
+                <motion.path 
+                  d="M 70 75 L 70 25 L 85 25 M 70 50 L 80 50"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 1 }}
+                />
+              </motion.svg>
             </div>
 
             {/* Floating tech badges */}

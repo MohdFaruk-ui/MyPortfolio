@@ -326,6 +326,12 @@
   border: 1px solid var(--color-border);
 }
 
+.monogramSvg {
+  width: 60%;
+  height: 60%;
+  filter: drop-shadow(0 0 10px var(--color-accent-glow));
+}
+
 .avatarInitials {
   font-family: var(--font-heading);
   font-size: 5rem;
